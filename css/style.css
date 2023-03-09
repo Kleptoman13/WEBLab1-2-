@@ -1,0 +1,123 @@
+html, body
+{
+    margin: 0;
+    padding: 0;
+
+}
+
+h1, h2, h3, h4, h5, h6, ol, ul, li, a, p
+{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 14px;
+    list-style: none;
+    color: #000000;
+    text-decoration: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 48px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.count {
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.input-container{
+    background-color: #fcfcfc;
+    
+}
+
+.input-container .wrapper{
+    padding: 30px;
+}
+
+.input-searcher{
+    width: 100%;
+    padding: 20px 0;
+    padding-left: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-image: url(https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-128.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    border: 1px #e7e7e7 solid;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input-searcher:focus{
+    background-color: #fcfcfc;
+    border: 2px #d1d1d1 solid;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px;
+}
+
+.info{
+    display: flex;
+    width: 90%;
+}
+
+.pokemon-icon{
+    width: 5%;
+    font-size: 20px;
+}
+
+.container-name{
+    display: flex;
+    width: 30%;
+}
+
+.name{
+    padding-left: 10px;
+    font-weight: 500;
+}
+
+.url{
+    color: #7c7c7c;
+}
+
+.container-btn{
+    width: 10%;
+}
+
+.btn{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1d1d1d;
+    padding: 7px 20px;
+    background-color: #fff;
+    border: 1px #e7e7e7 solid;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.btn:hover{
+    background-color: #fcfcfc;
+    border: 2px #d1d1d1 solid;
+    cursor: pointer;
+}
