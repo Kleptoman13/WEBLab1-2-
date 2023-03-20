@@ -15,7 +15,7 @@ function listGenerator(list)
     let template = '';
     if (list.length){
         for (let i = 0; i < list.length; i++) {
-            template += '<div class="user"><div class="info"><div class="container-name"><img class="pokemon-icon" src="svg/pokemon.svg" alt="#"><p class="name">'+ list[i].name +'</p></div><p class="url">'+ list[i].url +'/p></div><div class="container-btn"><input type="button" index="'+ i +'" value="Delete" class="btn"></div></div>'
+            template += '<div class="user"><div class="info"><div class="img-pok-container"><img src="'+ list[i].image +'" alt="#" class="img-pok"></div><div class="container-name"><p class="name">'+ list[i].name +'</p></div><p class="url">'+ list[i].url +'/p></div><div class="container-btn"><input type="button" index="'+ i +'" value="Delete" class="btn"></div></div>'
         }
     }
     else{
@@ -28,7 +28,7 @@ function listGenerator(list)
     const $btnDelete = document.querySelectorAll('.btn');
     for (let i = 0; i < $btnDelete.length; i++) {
         $btnDelete[i].addEventListener('click', function() {
-            deleteUser(i, list);
+            deleteUser(list[i].name, list);
         })
     }
 };
@@ -37,8 +37,15 @@ function listGenerator(list)
 //  .then((resp) => resp.json())
 //  .then(function(data){
 //     list = data.results;
-//     listGenerator(list);
-    
+//     for (let i = 0; i < list.length; i++) {
+        
+//         fetch('https://pokeapi.co/api/v2/pokemon/'+ list[i].name)
+//         .then((resp) => resp.json())
+//         .then(function(data){
+//             list[i].image = data.sprites.front_default;
+//             listGenerator(list); 
+//         });
+//     } 
 //  });
 
 function setLS(key, value){
@@ -49,6 +56,7 @@ function getLS(key) {
 }
 
 $field.addEventListener('input', function() {
+    list = getLS('list');
     let query = this.value.toLowerCase();
     let filterdList = list.filter(function (el) {
         return ~el.name.toLowerCase().indexOf(query);
@@ -57,15 +65,13 @@ $field.addEventListener('input', function() {
     listGenerator(filterdList);
 })
 
-function deleteUser(index, list){
-    console.log(index);
-    console.log(list);
-    let templateList = list.filter(function(value, number){
-        return number !== index;
-    })
-    // console.log(templateList)
+function deleteUser(namePok, list){
+
+    let templateList = getLS('list');
+    templateList = templateList.filter(obj => obj.name !== namePok)
+    list = list.filter(obj => obj.name !== namePok)
     setLS('list', templateList);
-    listGenerator(templateList);
+    listGenerator(list);
 }
 
 

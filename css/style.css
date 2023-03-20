@@ -76,15 +76,14 @@ h1, h2, h3, h4, h5, h6, ol, ul, li, a, p
     padding: 20px 10px;
 }
 
+
+
 .info{
     display: flex;
+    align-items: center;
     width: 90%;
 }
 
-.pokemon-icon{
-    width: 5%;
-    font-size: 20px;
-}
 
 .container-name{
     display: flex;
